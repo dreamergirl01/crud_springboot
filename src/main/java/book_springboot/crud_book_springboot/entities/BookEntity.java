@@ -1,5 +1,6 @@
 package book_springboot.crud_book_springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
