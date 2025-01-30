@@ -36,4 +36,17 @@ public class BookController {
     public BookEntity getById(@RequestParam(value = "id") Integer id) {
         return bookRepository.findById(id).get();
     }
+
+//    update data
+    @PostMapping(value = "updateBook")
+    public String updateBook(@RequestBody BookEntity param) {
+        return bookRepository.save(param).toString();
+    }
+
+//    delete
+    @GetMapping(value = "deleteBook")
+    public String deleteBook(@RequestParam(value = "id") Integer id) {
+        bookRepository.deleteById(id);
+        return "Succes Delete Book ID: "+id;
+    }
 }
